@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://www.telstra.com.au/uberprod/ss-global/themes/v11/images/favicon-base-orange.ico" rel="icon" type="image/x-icon" />
+<title>Infrastructure Cloud Health Check Dashboard</title>
+<style>
+  img {
+    width: 100%;
+    height: auto;
+}
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+ 
+</style>
+<link rel="stylesheet" href="./css/topnav.css">
+<link rel="stylesheet" href="./css/footer.css">
+<meta http-equiv="refresh" content="40" >
+<script src="./js/search.js"></script>
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+  <a class="active" href="./index.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Status 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./pages/machinestatus.html">Latest Machine Status</a>
+      <a href="./pages/failedmachines.html">Failed Machines</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Application 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="./pages/healthcheckmachines.html">Health Check</a>
+      <a href="#">Maxim</a>
+      <a href="./pages/nbnplus.html">NBN+</a>
+    </div>
+  </div> 
+
+  <a href="javascript:void(0);"  class="icon" onclick="mynavFunction()">&#9776;</a>
+</div>
+<h1 align="center">Infrastructure Cloud Health Check Dashboard</h1>
+<div class="imgbox">
+<img src="./images/stackPerDay.png" alt="machine details" width="100%" height="90%">
+</div>
+<!--<div class="imgbox">
+<img src="images\WholeDay.png" alt="HTML5 Icon" width="128" height="128">
+</div>-->
+<div class="footer">
+  <footer align="Left">&copy; Copyright 2018 Telstra</footer><p align="right">created by Sumanpreet Singh Jhinjer</p>
+</body>
+</html>

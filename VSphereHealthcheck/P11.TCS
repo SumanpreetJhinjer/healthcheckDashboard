@@ -1,0 +1,22 @@
+//Update the Workspace
+updateall
+
+// Specification of the NodePath of a desired Test Case
+
+JumpToNode "/NEWHealthCheckVsphere/Import_import180807_1349/Health Check New/VSphere HealthCheck/Execution/ExecutionLists/HealthCheckNew/P1"
+
+//Check out the EL
+Task "Checkout"
+
+//Run the Execution List Entry
+
+Task "Run"
+
+//Save the EL
+save
+
+//Checkin all Objects
+CheckInAll
+
+// Quit current TCShell session
+Exit

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="libs\bootstrap\css\bootstrap.min.css" />
+<link rel="stylesheet" href="libs\css\styles.css">
+<!-- <link rel="stylesheet" href=""/> -->
+<script src="libs\JS\vue.js"></script>
+<script src="libs\bootstrap\js\bootstrap.min.js"></script>
+
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<a class="navbar-brand" href="#">Infrastructure Self Serve Portal</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarCollapse" aria-controls="navbarCollapse"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+			<form class="form-inline mt-2 mt-md-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search"
+					aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div id="app" class="success">{{ message }}</div>
+
+
+<div id="stepProcess">
+		<div class="stepwizard ">
+			<div class="stepwizard-row setup-panel">
+				<div class="stepwizard-step">
+					<a href="" type="button" class="btn btn-primary btn-circle">1</a>
+					<p>Step1</p>
+				</div>
+				<div class="stepwizard-step">
+					<a href="" type="button" class="btn btn-circle"  v-bind:class="{  'btn-default': isDisabled2,'btn-primary': !isDisabled2  }"
+						:disabled=isDisabled2>2</a>
+					<p>Step 2</p>
+				</div>
+				<div class="stepwizard-step">
+					<a href="" type="button" class="btn  btn-circle" v-bind:class="{  'btn-default': isDisabled3,'btn-primary': !isDisabled3  }"
+						:disabled=isDisabled3>3</a>
+					<p>Step 3</p>
+				</div>
+			</div>
+		</div>
+
+		<form role="form" >
+		
+			<div class="setup-content" id="step-1" v-show="showStep1">
+
+				<div class=" form-group">
+					<label for="userid">User ID</label> <input type="text"
+						class="form-control" id="userID" aria-describedby="userIDHelp"
+						placeholder="Enter D number"> <!-- <small id="userIDHelp"
+						class="form-text text-muted">Enter user id.</small> -->
+				</div>
+				<div class="form-group">
+					<label for="team">Email ID</label> <input type="email"
+						class="form-control" id="email" aria-describedby="emailHelp"
+						placeholder="Enter Email ID">
+					<!--  <small id="userIDHelp" class="form-text text-muted">Enter user id.</small> -->
+				</div>
+				<div class=" form-group">
+					<label for="teamLable">Select Team Name</label> <select
+						class="form-control" id="teamName">
+						<option>Team 1</option>
+						<option>Team 2</option>
+						<option>Team 3</option>
+						<option>Team 4</option>
+						<option>Team 5</option>
+					</select>
+				</div>
+				<div class=" form-group">
+					<label for="team">Project</label> <input type="text"
+						class="form-control" id="Project" aria-describedby="teamHelp"
+						placeholder="Enter Project Name">
+					<!--  <small id="userIDHelp" class="form-text text-muted">Enter user id.</small> -->
+				</div>
+
+				<div class=" form-group">
+					<label for="team">Purpose</label> <input type="text"
+						class="form-control" id="Purpose" aria-describedby="teamHelp"
+						placeholder="Enter Purpose Name">
+					<!--  <small id="userIDHelp" class="form-text text-muted">Enter user id.</small> -->
+				</div>
+
+				
+
+				<div class=" form-group">
+				
+					<div Class="col-md-2  offset-md-10 nextResquest">
+						<button type="button"
+							class="btn btn-block btn-primary float-right"
+							v-on:click="nextStep">Next</button>
+					</div>
+				</div>
+				</div>
+			
+			<div class="setup-content" id="step-2" v-show="showStep2">
+				<div class=" form-group">
+					<h6>Select Software's</h6>
+				</div>
+				<div class="checkboxgroup" style="padding-bottom:5px;">
+				<div class="form-check">
+					<label for="selectSoftware" class="form-check-label"> <input
+						type="checkbox" class="form-check-input" id="software-select1">
+						Software 1
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label"> <input type="checkbox"
+						class="form-check-input" value="" id="software-select2">Software 2 
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label"> <input type="checkbox"
+						class="form-check-input" value="" id="software-select3">Software 3
+					</label>
+				</div>
+				</div>
+				<div class=" form-group">
+					<label for="exampleSelect1">Select Machine Count</label> <select
+						class="form-control" id="exampleSelect1">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+				<div class=" form-group">
+				<div Class="nextResquest2">
+					<button type="button"
+							class="btn col-md-2  btn-secondary"
+							v-on:click="previousStep1">Previous Step</button>
+						<button type="button"
+							class="btn col-md-2 btn-block btn-primary float-right"
+							v-on:click="nextStep2">Next Step</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="setup-content" id="step-3" v-show="showStep3">
+      			<div class=" form-group">
+      				<p>If machines available with software</p>
+					<h6>Following machines will be allocated to "Project name", "Team name"</h6>
+					<table class="table table-striped">
+					    <thead>
+					      <tr>
+					        <th>Machine Name</th>
+					        <th>Softwares Installed</th>
+					        
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td>Cloud1</td>
+					        <td>Tosca 9.1, Oracle client</td>
+					        
+					      </tr>
+					      <tr>
+					       <td>Cloud2</td>
+					        <td>Tosca 9.1, Oracle client</td>
+					        
+					      </tr>
+					    
+					     
+					    </tbody>
+					  </table>		
+					  <p>If machines available but software not installed</p>
+					<h6>Software installation is in progress with the following machines</h6>
+					<table class="table table-striped">
+					    <thead>
+					      <tr>
+					        <th>Machine Name</th>
+					        <th>Software requested</th>
+					       
+					        
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td>Cloud1</td>
+					        <td>Tosca 9.1, Oracle client</td>
+					       
+					        
+					      </tr>
+					      <tr>
+					        <td>Cloud2</td>
+					        <td>Tosca 9.1, Oracle client</td>
+					       
+					        
+					      </tr>
+					    
+					     
+					    </tbody>
+					  </table>					
+					  			
+				</div>
+				<div class=" form-group">
+				<div Class="nextResquest3">
+					<button type="button"
+							class="btn col-md-2  btn-secondary"
+							v-on:click="previousStep2">Previous Step</button>
+						<button type="Submit"
+							class="btn col-md-2 btn-block btn-primary float-right"
+							>Submit</button>
+					</div>
+				</div>
+    </div>
+    
+    
+		</form>
+		</div>
+
+	</div>
+
+<script src="JS\controller.js"></script>
+</body>
+</html>

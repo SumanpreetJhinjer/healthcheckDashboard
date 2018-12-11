@@ -1,0 +1,8 @@
+(Left(ActiveWorkbook.Path, InStrRev(ActiveWorkbook.Path, "\")) & "images
+
+Left(ActiveWorkbook.Path, InStrRev(ActiveWorkbook.Path, "\")) & "pages\
+
+
+https://www.thespreadsheetguru.com/blog/5-ways-to-create-a-dynamic-auto-adjusting-vba-range
+
+288-290, 317-318
